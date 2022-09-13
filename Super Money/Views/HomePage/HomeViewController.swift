@@ -32,7 +32,16 @@ class HomeViewController: UIViewController {
 		startTyping = false
 	}
 	
-}
+	@IBAction func nextBtn(_ sender: Any) {
+		let categoryExpenses = storyboard?.instantiateViewController(withIdentifier: "CategoryExpenses")
+		navigationController?.pushViewController(categoryExpenses!, animated: true)
+	}
+	
+
+	}
+	
+	
+
 
 
 		

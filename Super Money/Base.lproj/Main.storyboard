@@ -148,7 +148,7 @@
         <!--Super Money-->
         <scene sceneID="bcY-Yh-bqa">
             <objects>
-                <viewController id="bJ3-Ju-uva" customClass="HomeViewController" customModule="Super_Money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="bJ3-Ju-uva" customClass="HomeViewController" customModule="Super_Money" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ihr-fu-HnU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,14 +336,13 @@
                                             <action selector="digits:" destination="bJ3-Ju-uva" eventType="touchUpInside" id="J6r-dt-Qm0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeS-0b-ZXp">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeS-0b-ZXp">
                                         <rect key="frame" x="1" y="210.5" width="123.5" height="68.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title=",">
+                                        <buttonConfiguration key="configuration" style="plain">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" red="0.99961143730000002" green="0.90063339470000003" blue="0.064125165339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </backgroundConfiguration>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -555,7 +554,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Super Money" id="lHQ-H2-guc">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="owF-9e-Cgf">
+                        <barButtonItem key="leftBarButtonItem" style="done" id="owF-9e-Cgf">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ZjW-JC-8yp">
                                 <rect key="frame" x="20" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -566,13 +565,14 @@
                                 </buttonConfiguration>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="PYn-KH-Ews">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="PYn-KH-Ews">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="MJT-Y3-mBM">
-                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
+                                <rect key="frame" x="302" y="2.5" width="92" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99961143730000002" green="0.90063339470000003" blue="0.064125165339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Next &gt;">
+                                    <fontDescription key="titleFontDescription" name="Didot" family="Didot" pointSize="20"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -580,7 +580,13 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextBtn:" destination="bJ3-Ju-uva" eventType="touchUpInside" id="Zlx-3z-m61"/>
+                                </connections>
                             </button>
+                            <connections>
+                                <action selector="nextBtn:" destination="bJ3-Ju-uva" id="vF1-mz-OaB"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -632,8 +638,8 @@
         <!--Category-->
         <scene sceneID="Qn5-ax-4kL">
             <objects>
-                <viewController storyboardIdentifier="category" id="oR3-gF-rEr" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Esv-R0-cN1">
+                <viewController storyboardIdentifier="CategoryExpenses" id="oR3-gF-rEr" customClass="CategoryExpensesViewController" customModule="Super_Money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="CategoryExpenses" id="Esv-R0-cN1" customClass="CategoryExpenses">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -641,422 +647,464 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYS-iF-o8W" userLabel="CategoryView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="I4J-vJ-I43">
-                                                <rect key="frame" x="35" y="129" width="76" height="113"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="IUW-bK-aBx">
+                                                <rect key="frame" x="33" y="8" width="348" height="113"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5f-8S-8nD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="N5f-8S-8nD" secondAttribute="height" multiplier="1:1" id="MZ0-x2-4XI"/>
-                                                            <constraint firstAttribute="width" constant="76" id="Oc9-jP-ve4"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Give to relative">
-                                                            <backgroundConfiguration key="background" image="Give to relative-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh9-eg-TLg">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Give to relative">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="fai-Dd-Ifi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="113"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyW-2h-Nmm">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="IyW-2h-Nmm" secondAttribute="height" multiplier="1:1" id="FXv-6N-1G5"/>
+                                                                    <constraint firstAttribute="width" constant="76" id="JbW-gd-YQU"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Electronics">
+                                                                    <backgroundConfiguration key="background" image="Electronics-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXg-9x-Rh5">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="52"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Electronics">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="38h-6u-pic">
+                                                        <rect key="frame" x="136" y="0.0" width="76" height="113"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-Fb-1Ix">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="76" id="db9-AV-MCE"/>
+                                                                    <constraint firstAttribute="width" secondItem="CAg-Fb-1Ix" secondAttribute="height" multiplier="1:1" id="xVa-Y3-3aN"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Education">
+                                                                    <backgroundConfiguration key="background" image="Education-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGA-TY-nVZ">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="52"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Education">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="cpR-Nq-oHo">
+                                                        <rect key="frame" x="272" y="0.0" width="76" height="113"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m2-6i-vFW">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="8m2-6i-vFW" secondAttribute="height" multiplier="1:1" id="3jq-0B-If5"/>
+                                                                    <constraint firstAttribute="width" constant="76" id="M5j-0Y-gE7"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Official fees">
+                                                                    <backgroundConfiguration key="background" image="Official fees-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsG-ww-p2v">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="52"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Official fees">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="oqy-93-hAo">
-                                                <rect key="frame" x="35" y="250" width="76" height="113"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="jtM-x7-pPi">
+                                                <rect key="frame" x="33" y="122" width="348" height="112.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLm-s1-2pi">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="76" id="28Y-mI-7xo"/>
-                                                            <constraint firstAttribute="width" secondItem="OLm-s1-2pi" secondAttribute="height" multiplier="1:1" id="AIj-sQ-rc7"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Pets">
-                                                            <backgroundConfiguration key="background" image="Pets-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4V-lO-CYM">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Pets">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="I4J-vJ-I43">
+                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="112.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5f-8S-8nD">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="N5f-8S-8nD" secondAttribute="height" multiplier="1:1" id="MZ0-x2-4XI"/>
+                                                                    <constraint firstAttribute="width" constant="76" id="Oc9-jP-ve4"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Give to relative">
+                                                                    <backgroundConfiguration key="background" image="Give to relative-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh9-eg-TLg">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="51.5"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Give to relative">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="GXt-Vd-Cnr">
+                                                        <rect key="frame" x="136" y="0.0" width="76" height="112.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acD-me-3AN">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="acD-me-3AN" secondAttribute="height" multiplier="1:1" id="8tV-0W-nTK"/>
+                                                                    <constraint firstAttribute="width" constant="76" id="ddr-yr-NwD"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Unknown">
+                                                                    <backgroundConfiguration key="background" image="Unkknown-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ns-lN-rDM">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="51.5"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Unknown">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="XHt-yJ-0K0">
+                                                        <rect key="frame" x="272" y="0.0" width="76" height="112.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEW-PB-v5e">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="76" id="IwL-Eo-b35"/>
+                                                                    <constraint firstAttribute="width" secondItem="kEW-PB-v5e" secondAttribute="height" multiplier="1:1" id="dgm-Db-TBy"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Travel" buttonSize="medium" titleAlignment="center">
+                                                                    <backgroundConfiguration key="background" cornerRadius="4" image="Airplane-App-76x76"/>
+                                                                    <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </buttonConfiguration>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aT-VF-vV5">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="51.5"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Travel">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="b5U-jR-Mo7">
-                                                <rect key="frame" x="168" y="250" width="76" height="113"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="Rl6-SY-nkr">
+                                                <rect key="frame" x="33" y="235.5" width="348" height="113"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMW-3E-XOd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="HMW-3E-XOd" secondAttribute="height" multiplier="1:1" id="blQ-W8-Uo1"/>
-                                                            <constraint firstAttribute="width" constant="76" id="qDK-LE-our"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Medicine">
-                                                            <backgroundConfiguration key="background" image="Medicine-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="4"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kf8-dX-ZtF">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Medicine">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="oqy-93-hAo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="113"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLm-s1-2pi">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="76" id="28Y-mI-7xo"/>
+                                                                    <constraint firstAttribute="width" secondItem="OLm-s1-2pi" secondAttribute="height" multiplier="1:1" id="AIj-sQ-rc7"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Pets">
+                                                                    <backgroundConfiguration key="background" image="Pets-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4V-lO-CYM">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="52"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Pets">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="b5U-jR-Mo7">
+                                                        <rect key="frame" x="136" y="0.0" width="76" height="113"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMW-3E-XOd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="HMW-3E-XOd" secondAttribute="height" multiplier="1:1" id="blQ-W8-Uo1"/>
+                                                                    <constraint firstAttribute="width" constant="76" id="qDK-LE-our"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Medicine">
+                                                                    <backgroundConfiguration key="background" image="Medicine-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kf8-dX-ZtF">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="52"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Medicine">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="OPv-ow-81k">
+                                                        <rect key="frame" x="272" y="0.0" width="76" height="113"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcu-2v-eO2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="wcu-2v-eO2" secondAttribute="height" multiplier="1:1" id="Ha4-Wv-vOz"/>
+                                                                    <constraint firstAttribute="width" constant="76" id="IOR-Sm-vbE"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Vehicle">
+                                                                    <backgroundConfiguration key="background" image="Vehicle-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blb-aM-jmz">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="52"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Vehicle">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="OPv-ow-81k">
-                                                <rect key="frame" x="308" y="250" width="76" height="113"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="rBK-C2-9fe">
+                                                <rect key="frame" x="33" y="349.5" width="348" height="112.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcu-2v-eO2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="wcu-2v-eO2" secondAttribute="height" multiplier="1:1" id="Ha4-Wv-vOz"/>
-                                                            <constraint firstAttribute="width" constant="76" id="IOR-Sm-vbE"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Vehicle">
-                                                            <backgroundConfiguration key="background" image="Vehicle-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blb-aM-jmz">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Vehicle">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="UAc-Nz-zii">
+                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="112.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvw-6Y-sTb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="hvw-6Y-sTb" secondAttribute="height" multiplier="1:1" id="YLW-X7-PXL"/>
+                                                                    <constraint firstAttribute="width" constant="76" id="q89-1X-dVc"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Restaurant">
+                                                                    <backgroundConfiguration key="background" image="Restaurant-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ru-AW-GyV">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="51.5"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Restraunt">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="k1s-7W-dit">
+                                                        <rect key="frame" x="136" y="0.0" width="76" height="112.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzO-gY-vR4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="76" id="R4n-6B-zXm"/>
+                                                                    <constraint firstAttribute="width" secondItem="GzO-gY-vR4" secondAttribute="height" multiplier="1:1" id="U2h-Ep-l6Z"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Public Transport">
+                                                                    <backgroundConfiguration key="background" image="PublicTransport-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elq-ct-BpB">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="51.5"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Public transport">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="5s8-It-wbb">
+                                                        <rect key="frame" x="272" y="0.0" width="76" height="112.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt5-Hi-gLg">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="Wt5-Hi-gLg" secondAttribute="height" multiplier="1:1" id="fpY-ZC-bkE"/>
+                                                                    <constraint firstAttribute="width" constant="76" id="jR2-bn-m6S"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Clothing">
+                                                                    <backgroundConfiguration key="background" image="Clothing-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKh-vm-t6r">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="51.5"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Clothing">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="5s8-It-wbb">
-                                                <rect key="frame" x="308" y="371" width="76" height="113"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="HgD-IT-YzG">
+                                                <rect key="frame" x="33" y="463" width="348" height="113"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt5-Hi-gLg">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="Wt5-Hi-gLg" secondAttribute="height" multiplier="1:1" id="fpY-ZC-bkE"/>
-                                                            <constraint firstAttribute="width" constant="76" id="jR2-bn-m6S"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Clothing">
-                                                            <backgroundConfiguration key="background" image="Clothing-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKh-vm-t6r">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Clothing">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="khR-T0-WKe">
+                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="113"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seC-Sc-1p5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="76" id="3aA-ah-Dlh"/>
+                                                                    <constraint firstAttribute="width" secondItem="seC-Sc-1p5" secondAttribute="height" multiplier="1:1" id="k8V-p0-QLW"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Food">
+                                                                    <backgroundConfiguration key="background" image="Eat-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nW4-k3-llL">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="52"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Food">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="JsD-x9-YXF">
+                                                        <rect key="frame" x="136" y="0.0" width="76" height="113"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvX-ys-B03">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="nvX-ys-B03" secondAttribute="height" multiplier="1:1" id="BnI-rH-g6N"/>
+                                                                    <constraint firstAttribute="width" constant="76" id="bcn-p3-fG8"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Sports">
+                                                                    <backgroundConfiguration key="background" image="Sports-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg7-RP-tZE">
+                                                                <rect key="frame" x="17" y="61" width="42" height="52"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Sports">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="SoJ-wz-cQt">
+                                                        <rect key="frame" x="272" y="0.0" width="76" height="113"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfE-rd-hlB">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="76" id="gJk-uL-rFy"/>
+                                                                    <constraint firstAttribute="width" secondItem="TfE-rd-hlB" secondAttribute="height" multiplier="1:1" id="wda-EA-axH"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Child">
+                                                                    <backgroundConfiguration key="background" image="Child-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQJ-oH-dgi">
+                                                                <rect key="frame" x="0.0" y="83" width="76" height="30"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Child">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="k1s-7W-dit">
-                                                <rect key="frame" x="156" y="371" width="103" height="113"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="7ic-EI-cby">
+                                                <rect key="frame" x="169" y="577" width="76" height="112.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzO-gY-vR4">
-                                                        <rect key="frame" x="13.5" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="76" id="R4n-6B-zXm"/>
-                                                            <constraint firstAttribute="width" secondItem="GzO-gY-vR4" secondAttribute="height" multiplier="1:1" id="U2h-Ep-l6Z"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Public Transport">
-                                                            <backgroundConfiguration key="background" image="PublicTransport-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elq-ct-BpB">
-                                                        <rect key="frame" x="0.0" y="61" width="103" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Public transport">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="JsD-x9-YXF">
-                                                <rect key="frame" x="169" y="492" width="76" height="113"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvX-ys-B03">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="nvX-ys-B03" secondAttribute="height" multiplier="1:1" id="BnI-rH-g6N"/>
-                                                            <constraint firstAttribute="width" constant="76" id="bcn-p3-fG8"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Sports">
-                                                            <backgroundConfiguration key="background" image="Sports-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg7-RP-tZE">
-                                                        <rect key="frame" x="17" y="61" width="42" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Sports">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="fai-Dd-Ifi">
-                                                <rect key="frame" x="35" y="8" width="76" height="113"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyW-2h-Nmm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="IyW-2h-Nmm" secondAttribute="height" multiplier="1:1" id="FXv-6N-1G5"/>
-                                                            <constraint firstAttribute="width" constant="76" id="JbW-gd-YQU"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Electronics">
-                                                            <backgroundConfiguration key="background" image="Electronics-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXg-9x-Rh5">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Electronics">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="38h-6u-pic">
-                                                <rect key="frame" x="169" y="0.0" width="76" height="113"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-Fb-1Ix">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="76" id="db9-AV-MCE"/>
-                                                            <constraint firstAttribute="width" secondItem="CAg-Fb-1Ix" secondAttribute="height" multiplier="1:1" id="xVa-Y3-3aN"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Education">
-                                                            <backgroundConfiguration key="background" image="Education-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGA-TY-nVZ">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Education">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="cpR-Nq-oHo">
-                                                <rect key="frame" x="308" y="8" width="76" height="113"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m2-6i-vFW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="8m2-6i-vFW" secondAttribute="height" multiplier="1:1" id="3jq-0B-If5"/>
-                                                            <constraint firstAttribute="width" constant="76" id="M5j-0Y-gE7"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Official fees">
-                                                            <backgroundConfiguration key="background" image="Official fees-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsG-ww-p2v">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Official fees">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="XHt-yJ-0K0">
-                                                <rect key="frame" x="308" y="129" width="76" height="113"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEW-PB-v5e">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="76" id="IwL-Eo-b35"/>
-                                                            <constraint firstAttribute="width" secondItem="kEW-PB-v5e" secondAttribute="height" multiplier="1:1" id="dgm-Db-TBy"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Travel" buttonSize="medium" titleAlignment="center">
-                                                            <backgroundConfiguration key="background" cornerRadius="4" image="Airplane-App-76x76"/>
-                                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </buttonConfiguration>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="4"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aT-VF-vV5">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Travel">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="UAc-Nz-zii">
-                                                <rect key="frame" x="35" y="371" width="76" height="113"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvw-6Y-sTb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="hvw-6Y-sTb" secondAttribute="height" multiplier="1:1" id="YLW-X7-PXL"/>
-                                                            <constraint firstAttribute="width" constant="76" id="q89-1X-dVc"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Restaurant">
-                                                            <backgroundConfiguration key="background" image="Restaurant-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ru-AW-GyV">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Restraunt">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="GXt-Vd-Cnr">
-                                                <rect key="frame" x="169" y="129" width="76" height="113"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acD-me-3AN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="acD-me-3AN" secondAttribute="height" multiplier="1:1" id="8tV-0W-nTK"/>
-                                                            <constraint firstAttribute="width" constant="76" id="ddr-yr-NwD"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Unknown">
-                                                            <backgroundConfiguration key="background" image="Unkknown-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ns-lN-rDM">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Unknown">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="SoJ-wz-cQt">
-                                                <rect key="frame" x="308" y="492" width="76" height="113"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfE-rd-hlB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="76" id="gJk-uL-rFy"/>
-                                                            <constraint firstAttribute="width" secondItem="TfE-rd-hlB" secondAttribute="height" multiplier="1:1" id="wda-EA-axH"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Child">
-                                                            <backgroundConfiguration key="background" image="Child-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQJ-oH-dgi">
-                                                        <rect key="frame" x="0.0" y="83" width="76" height="30"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Child">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="khR-T0-WKe">
-                                                <rect key="frame" x="35" y="492" width="76" height="113"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seC-Sc-1p5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="76" id="3aA-ah-Dlh"/>
-                                                            <constraint firstAttribute="width" secondItem="seC-Sc-1p5" secondAttribute="height" multiplier="1:1" id="k8V-p0-QLW"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Food">
-                                                            <backgroundConfiguration key="background" image="Eat-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nW4-k3-llL">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Food">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="CLm-C9-FaD">
-                                                <rect key="frame" x="35" y="613" width="76" height="113"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDW-pQ-3rn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="76" id="bt7-cG-tVj"/>
-                                                            <constraint firstAttribute="width" secondItem="MDW-pQ-3rn" secondAttribute="height" multiplier="1:1" id="y1f-of-COq"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Cinema">
-                                                            <backgroundConfiguration key="background" image="Cinema-App-76x76"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfA-GP-FqK">
-                                                        <rect key="frame" x="0.0" y="61" width="76" height="52"/>
-                                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Cinema">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="CLm-C9-FaD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="112.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDW-pQ-3rn">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="76" id="bt7-cG-tVj"/>
+                                                                    <constraint firstAttribute="width" secondItem="MDW-pQ-3rn" secondAttribute="height" multiplier="1:1" id="y1f-of-COq"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Cinema">
+                                                                    <backgroundConfiguration key="background" image="Cinema-App-76x76"/>
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfA-GP-FqK">
+                                                                <rect key="frame" x="0.0" y="61" width="76" height="51.5"/>
+                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Cinema">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1200" id="Qka-Kp-hlk"/>
+                                            <constraint firstItem="HgD-IT-YzG" firstAttribute="centerX" secondItem="GYS-iF-o8W" secondAttribute="centerX" id="0wR-yd-c9G"/>
+                                            <constraint firstItem="Rl6-SY-nkr" firstAttribute="centerX" secondItem="GYS-iF-o8W" secondAttribute="centerX" id="8gS-8v-acI"/>
+                                            <constraint firstAttribute="height" constant="800" id="Qka-Kp-hlk"/>
+                                            <constraint firstItem="jtM-x7-pPi" firstAttribute="centerX" secondItem="GYS-iF-o8W" secondAttribute="centerX" id="afo-ec-61g"/>
+                                            <constraint firstItem="7ic-EI-cby" firstAttribute="top" secondItem="HgD-IT-YzG" secondAttribute="bottom" constant="1" id="eST-WA-rmn"/>
+                                            <constraint firstItem="Rl6-SY-nkr" firstAttribute="top" secondItem="jtM-x7-pPi" secondAttribute="bottom" constant="1" id="fVO-tV-Y7f"/>
+                                            <constraint firstItem="IUW-bK-aBx" firstAttribute="centerX" secondItem="GYS-iF-o8W" secondAttribute="centerX" id="kKd-WH-ASB"/>
+                                            <constraint firstItem="jtM-x7-pPi" firstAttribute="top" secondItem="IUW-bK-aBx" secondAttribute="bottom" constant="1" id="lkY-F6-H5u"/>
+                                            <constraint firstItem="IUW-bK-aBx" firstAttribute="width" secondItem="GYS-iF-o8W" secondAttribute="width" multiplier="0.84058" id="lpN-cv-Esi"/>
+                                            <constraint firstItem="IUW-bK-aBx" firstAttribute="top" secondItem="GYS-iF-o8W" secondAttribute="top" constant="8" id="qNs-rY-K9L"/>
+                                            <constraint firstItem="7ic-EI-cby" firstAttribute="centerX" secondItem="GYS-iF-o8W" secondAttribute="centerX" id="sAX-d6-ZsL"/>
+                                            <constraint firstItem="rBK-C2-9fe" firstAttribute="top" secondItem="Rl6-SY-nkr" secondAttribute="bottom" constant="1" id="yG5-A4-gwT"/>
+                                            <constraint firstItem="HgD-IT-YzG" firstAttribute="top" secondItem="rBK-C2-9fe" secondAttribute="bottom" constant="1" id="zww-Or-2uk"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1066,6 +1114,8 @@
                                     <constraint firstItem="GYS-iF-o8W" firstAttribute="top" secondItem="oPF-Qq-4XT" secondAttribute="top" id="5em-gQ-PgK"/>
                                     <constraint firstAttribute="trailing" secondItem="GYS-iF-o8W" secondAttribute="trailing" id="RoP-Wn-mO5"/>
                                     <constraint firstAttribute="bottom" secondItem="GYS-iF-o8W" secondAttribute="bottom" id="cwA-qV-sTS"/>
+                                    <constraint firstItem="rBK-C2-9fe" firstAttribute="centerX" secondItem="oPF-Qq-4XT" secondAttribute="centerX" id="d6a-wp-I7z"/>
+                                    <constraint firstItem="rBK-C2-9fe" firstAttribute="centerX" secondItem="oPF-Qq-4XT" secondAttribute="centerX" id="eu1-lM-sDE"/>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XT-Lh-nwB">
@@ -1097,24 +1147,34 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Category" id="tiV-ks-aoO">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="odW-wv-cfh">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ehS-wY-Bf3">
-                                <rect key="frame" x="20" y="5" width="98.5" height="34.5"/>
+                        <barButtonItem key="leftBarButtonItem" style="done" id="6aU-MR-VBw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9E9-dS-Iec">
+                                <rect key="frame" x="20" y="2.5" width="92" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99961143730000002" green="0.90063339470000003" blue="0.064125165339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="&lt; Amount">
+                                <buttonConfiguration key="configuration" style="plain" title="&lt; Back">
+                                    <fontDescription key="titleFontDescription" name="Didot" family="Didot" pointSize="20"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backToHomePage:" destination="oR3-gF-rEr" eventType="touchUpInside" id="4GF-6P-u9I"/>
+                                </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="DDx-MI-kGZ">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="DDx-MI-kGZ">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Mul-Ez-boE">
-                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
+                                <rect key="frame" x="302" y="2.5" width="92" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99961143730000002" green="0.90063339470000003" blue="0.064125165339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Next &gt;">
+                                    <fontDescription key="titleFontDescription" name="Didot" family="Didot" pointSize="20"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
