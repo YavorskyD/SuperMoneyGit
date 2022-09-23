@@ -9,13 +9,8 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 	
-	let storage = UserDefaults()
-	
 	@IBOutlet weak var collectionView: UICollectionView!
-	
 	@IBOutlet weak var nextButton: UIButton!
-	
-	
 	@IBOutlet weak var pageControl: UIPageControl!
 	
 	var slides: [ OnboardingSlide ] = []
@@ -28,13 +23,10 @@ class OnboardingViewController: UIViewController {
 				nextButton.setTitle( "Let's Go", for: .normal)
 				
 			}else{
-				
 				nextButton.setTitle( "Next", for: .normal)
 			}
 		}
-		
 	}
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -45,7 +37,6 @@ class OnboardingViewController: UIViewController {
 			OnboardingSlide(title: "Congratulation!", discription: "Today", image: #imageLiteral(resourceName: "3 slides"))
 		]
 		pageControl.numberOfPages = slides.count
-		
 	}
 	
 	@IBAction func nextButtonclicked(_ sender: UIButton) {
@@ -53,13 +44,12 @@ class OnboardingViewController: UIViewController {
 			let controller = storyboard?.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
 			controller.modalPresentationStyle = .fullScreen
 			controller.modalTransitionStyle = .flipHorizontal
+			UserDefaults.standard.hasOnboarded = true
 			present(controller,animated: true, completion: nil)
 		}else{
 			currentPage += 1
-			
 			let indexPath = IndexPath(item: currentPage, section: 0)
 			collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-			
 		}
 	}
 }
@@ -90,7 +80,7 @@ extension OnboardingViewController:
 
 // MARK: - TODO Использовать для отображения онбординга только при первом запуске
 /*
- let storage = UserDefaults()
+ let storage = UserDefaults.standart
  storage.set(true, forKey: "isNotFirstStart")
  let isNotFirstStart: Bool = storage.bool(forKey: "isNotFirstStart")
  */

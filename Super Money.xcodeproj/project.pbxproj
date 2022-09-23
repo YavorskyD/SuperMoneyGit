@@ -13,13 +13,17 @@
 		3C521FAA28C20A8E00B5FAF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C521FA828C20A8E00B5FAF2 /* Main.storyboard */; };
 		3C521FAC28C20A9000B5FAF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C521FAB28C20A9000B5FAF2 /* Assets.xcassets */; };
 		3C521FAF28C20A9000B5FAF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C521FAD28C20A9000B5FAF2 /* LaunchScreen.storyboard */; };
+		3C532BA628D3363C003635C8 /* SpendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C532BA528D3363C003635C8 /* SpendingModel.swift */; };
+		3CA56DA728DB39880072534F /*  SpendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA56DA628DB39880072534F /*  SpendingModel.swift */; };
 		3CAA9F2228D080D400FA1898 /* CategoryExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA9F2128D080D400FA1898 /* CategoryExpensesViewController.swift */; };
-		3CC17D6928CD436E0037EF83 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC17D6828CD436E0037EF83 /* Category.swift */; };
+		3CBB45B428D38EEA00CE9652 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB45B328D38EEA00CE9652 /* UserDefault.swift */; };
+		3CCB6E7728D1CC1000B0B620 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCB6E7628D1CC1000B0B620 /* DescriptionViewController.swift */; };
 		3CDF57FD28C22B38008C1BF9 /* UIview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF57FC28C22B38008C1BF9 /* UIview+Extension.swift */; };
 		3CDF57FF28C22F07008C1BF9 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF57FE28C22F07008C1BF9 /* OnboardingSlide.swift */; };
 		3CDF580128C23C9C008C1BF9 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF580028C23C9C008C1BF9 /* OnboardingCollectionViewCell.swift */; };
 		3CDF580228C77C27008C1BF9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF57F928C2201C008C1BF9 /* OnboardingViewController.swift */; };
 		3CDF580528C87024008C1BF9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF580428C87024008C1BF9 /* HomeViewController.swift */; };
+		FD7929A2ECEE3265924ABF20 /* Pods_Super_Money.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F6CE36C6969E8CFB7F78C5 /* Pods_Super_Money.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +35,19 @@
 		3C521FAB28C20A9000B5FAF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C521FAE28C20A9000B5FAF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C521FB028C20A9000B5FAF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C532BA528D3363C003635C8 /* SpendingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingModel.swift; sourceTree = "<group>"; };
+		3CA56DA628DB39880072534F /*  SpendingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " SpendingModel.swift"; sourceTree = "<group>"; };
 		3CAA9F2128D080D400FA1898 /* CategoryExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExpensesViewController.swift; sourceTree = "<group>"; };
-		3CC17D6828CD436E0037EF83 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		3CBB45B328D38EEA00CE9652 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		3CCB6E7628D1CC1000B0B620 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		3CDF57F928C2201C008C1BF9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		3CDF57FC28C22B38008C1BF9 /* UIview+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIview+Extension.swift"; sourceTree = "<group>"; };
 		3CDF57FE28C22F07008C1BF9 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		3CDF580028C23C9C008C1BF9 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		3CDF580428C87024008C1BF9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A5FE24C86807873BB30FFBFC /* Pods-Super Money.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Super Money.debug.xcconfig"; path = "Target Support Files/Pods-Super Money/Pods-Super Money.debug.xcconfig"; sourceTree = "<group>"; };
+		D8F6CE36C6969E8CFB7F78C5 /* Pods_Super_Money.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Super_Money.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F25BF54FDFF63286302C5B8F /* Pods-Super Money.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Super Money.release.xcconfig"; path = "Target Support Files/Pods-Super Money/Pods-Super Money.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD7929A2ECEE3265924ABF20 /* Pods_Super_Money.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +67,8 @@
 			children = (
 				3C521FA128C20A8E00B5FAF2 /* Super Money */,
 				3C521FA028C20A8E00B5FAF2 /* Products */,
+				537BA04A14AD2BDFE4D7A1DD /* Pods */,
+				D4518424A12BE9A1E42272AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,14 +84,13 @@
 			isa = PBXGroup;
 			children = (
 				3CDF57FB28C22AF4008C1BF9 /* Extension */,
-				3CDF57F728C21ECB008C1BF9 /* CostomViews */,
 				3CDF57F628C21EB7008C1BF9 /* Views */,
 				3CDF57F528C21E9F008C1BF9 /* Models */,
 				3C521FA228C20A8E00B5FAF2 /* AppDelegate.swift */,
 				3C521FA428C20A8E00B5FAF2 /* SceneDelegate.swift */,
 				3C521FA628C20A8E00B5FAF2 /* ViewController.swift */,
-				3C521FA828C20A8E00B5FAF2 /* Main.storyboard */,
 				3C521FAB28C20A9000B5FAF2 /* Assets.xcassets */,
+				3C521FA828C20A8E00B5FAF2 /* Main.storyboard */,
 				3C521FAD28C20A9000B5FAF2 /* LaunchScreen.storyboard */,
 				3C521FB028C20A9000B5FAF2 /* Info.plist */,
 			);
@@ -88,7 +100,9 @@
 		3CDF57F528C21E9F008C1BF9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3C532BA528D3363C003635C8 /* SpendingModel.swift */,
 				3CDF57FE28C22F07008C1BF9 /* OnboardingSlide.swift */,
+				3CA56DA628DB39880072534F /*  SpendingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,24 +110,17 @@
 		3CDF57F628C21EB7008C1BF9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3CC17D6828CD436E0037EF83 /* Category.swift */,
-				3CDF580328C86FD1008C1BF9 /* HomePage */,
+				3CDF580428C87024008C1BF9 /* HomeViewController.swift */,
+				3CCB6E7628D1CC1000B0B620 /* DescriptionViewController.swift */,
+				3CAA9F2128D080D400FA1898 /* CategoryExpensesViewController.swift */,
 				3CDF57F828C21EF8008C1BF9 /* Onboarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		3CDF57F728C21ECB008C1BF9 /* CostomViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CostomViews;
-			sourceTree = "<group>";
-		};
 		3CDF57F828C21EF8008C1BF9 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				3CAA9F2128D080D400FA1898 /* CategoryExpensesViewController.swift */,
 				3CDF57F928C2201C008C1BF9 /* OnboardingViewController.swift */,
 				3CDF580028C23C9C008C1BF9 /* OnboardingCollectionViewCell.swift */,
 			);
@@ -124,16 +131,26 @@
 			isa = PBXGroup;
 			children = (
 				3CDF57FC28C22B38008C1BF9 /* UIview+Extension.swift */,
+				3CBB45B328D38EEA00CE9652 /* UserDefault.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		3CDF580328C86FD1008C1BF9 /* HomePage */ = {
+		537BA04A14AD2BDFE4D7A1DD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3CDF580428C87024008C1BF9 /* HomeViewController.swift */,
+				A5FE24C86807873BB30FFBFC /* Pods-Super Money.debug.xcconfig */,
+				F25BF54FDFF63286302C5B8F /* Pods-Super Money.release.xcconfig */,
 			);
-			path = HomePage;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D4518424A12BE9A1E42272AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8F6CE36C6969E8CFB7F78C5 /* Pods_Super_Money.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C521FB328C20A9000B5FAF2 /* Build configuration list for PBXNativeTarget "Super Money" */;
 			buildPhases = (
+				5347BB85A89157E4560CE6C7 /* [CP] Check Pods Manifest.lock */,
 				3C521F9B28C20A8E00B5FAF2 /* Sources */,
 				3C521F9C28C20A8E00B5FAF2 /* Frameworks */,
 				3C521F9D28C20A8E00B5FAF2 /* Resources */,
+				16F0F96CF3CDFB70B9CA555B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,6 +221,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16F0F96CF3CDFB70B9CA555B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Super Money/Pods-Super Money-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Super Money/Pods-Super Money-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Super Money/Pods-Super Money-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5347BB85A89157E4560CE6C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Super Money-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3C521F9B28C20A8E00B5FAF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -209,13 +270,16 @@
 			files = (
 				3C521FA728C20A8E00B5FAF2 /* ViewController.swift in Sources */,
 				3C521FA328C20A8E00B5FAF2 /* AppDelegate.swift in Sources */,
+				3CBB45B428D38EEA00CE9652 /* UserDefault.swift in Sources */,
 				3C521FA528C20A8E00B5FAF2 /* SceneDelegate.swift in Sources */,
+				3C532BA628D3363C003635C8 /* SpendingModel.swift in Sources */,
 				3CDF580528C87024008C1BF9 /* HomeViewController.swift in Sources */,
 				3CDF57FD28C22B38008C1BF9 /* UIview+Extension.swift in Sources */,
 				3CDF580228C77C27008C1BF9 /* OnboardingViewController.swift in Sources */,
 				3CDF57FF28C22F07008C1BF9 /* OnboardingSlide.swift in Sources */,
-				3CC17D6928CD436E0037EF83 /* Category.swift in Sources */,
+				3CCB6E7728D1CC1000B0B620 /* DescriptionViewController.swift in Sources */,
 				3CDF580128C23C9C008C1BF9 /* OnboardingCollectionViewCell.swift in Sources */,
+				3CA56DA728DB39880072534F /*  SpendingModel.swift in Sources */,
 				3CAA9F2228D080D400FA1898 /* CategoryExpensesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +424,7 @@
 		};
 		3C521FB428C20A9000B5FAF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5FE24C86807873BB30FFBFC /* Pods-Super Money.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -388,6 +453,7 @@
 		};
 		3C521FB528C20A9000B5FAF2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F25BF54FDFF63286302C5B8F /* Pods-Super Money.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
